@@ -97,7 +97,7 @@ export default function () {
         setCurrentTab(findTab(previous) ?? head(tabs.value));
     };
 
-    const canAddNewTab = computed(() => $config.isDesktop || tabs.value.length < 2);
+    const canAddNewTab = computed(() => $config.isDesktop || tabs.value.length < 20);
 
     const sortedTabs = computed(() =>
         tabs.value.sort((aTab, bTab) => new Date(aTab.created_at) - new Date(bTab.created_at))
